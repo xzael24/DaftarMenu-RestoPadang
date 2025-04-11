@@ -10,8 +10,6 @@ body {
   font-family: 'Poppins', sans-serif;
   background-color: #f8f8f8;
   color: #333;
-  margin: 0;
-  padding: 0;
 }
 
 /* Menu Container */
@@ -19,6 +17,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
+  position: relative;
 }
 
 /* Menu Header */
@@ -132,13 +131,12 @@ body {
 }
 
 .dark {
-  --primary:rgb(255, 255, 255); /* atau warna kontras lain untuk dark mode */
+  --primary:rgb(255, 255, 255); /* or another contrasting color for dark mode */
 }
-
 
 /* Dark mode for body and cards */
 .dark body {
-  background-color: #111827; /* atau sesuaikan warna gelap yang kamu mau */
+  background-color: #111827; /* or adjust the dark color as desired */
   color: #f3f4f6;
 }
 
@@ -147,14 +145,12 @@ body {
 }
 
 .dark .menu-item-price {
-  color:rgb(255, 255, 255); /* misalnya warna kuning biar kontras, bisa diganti */
+  color:rgb(255, 255, 255); /* for contrast, can be changed */
 }
-
 
 .dark .menu-item {
   background-color: #1f2937;
 }
-
 
 .dark .search-input {
   background-color: #374151;
@@ -186,3 +182,84 @@ button, input, .menu-item, .category-tag {
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   }
 }
+
+.toggle-dark-mode-button {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 9999;
+  font-size: 1.75rem;
+  background: transparent;
+  color: inherit;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  transition: transform 0.3s ease, rotate 0.3s ease;
+  outline: none;
+}
+
+.toggle-dark-mode-button:hover {
+  transform: scale(1.2) rotate(15deg);
+}
+
+.toggle-dark-mode-button:active {
+  transform: scale(0.95) rotate(-10deg);
+}
+
+@keyframes waveBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(-8px);
+  }
+  20% {
+    transform: translateY(0);
+  }
+  /* 20% sampai 100% itu diem */
+}
+
+.wave-title {
+  display: inline-block;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.wave-char {
+  display: inline-block;
+  animation: waveBounce 5s ease-in-out infinite;
+}
+
+/* Delay per huruf */
+.wave-char.char-0 { animation-delay: 0s; }
+.wave-char.char-1 { animation-delay: 0.05s; }
+.wave-char.char-2 { animation-delay: 0.1s; }
+.wave-char.char-3 { animation-delay: 0.15s; }
+.wave-char.char-4 { animation-delay: 0.2s; }
+.wave-char.char-5 { animation-delay: 0.25s; }
+.wave-char.char-6 { animation-delay: 0.3s; }
+.wave-char.char-7 { animation-delay: 0.35s; }
+.wave-char.char-8 { animation-delay: 0.4s; }
+.wave-char.char-9 { animation-delay: 0.45s; }
+.wave-char.char-10 { animation-delay: 0.5s; }
+.wave-char.char-11 { animation-delay: 0.55s; }
+.wave-char.char-12 { animation-delay: 0.6s; }
+.wave-char.char-13 { animation-delay: 0.65s; }
+.wave-char.char-14 { animation-delay: 0.7s; }
+.wave-char.char-15 { animation-delay: 0.75s; }
+.wave-char.char-16 { animation-delay: 0.8s; }
+.wave-char.char-17 { animation-delay: 0.85s; }
+.wave-char.char-18 { animation-delay: 0.9s; }
+.wave-char.char-19 { animation-delay: 0.95s; }
+.wave-char.char-20 { animation-delay: 1s; }
+.wave-char.char-21 { animation-delay: 1.05s; }
+.wave-char.char-22 { animation-delay: 1.1s; }
+.wave-char.char-23 { animation-delay: 1.15s; }
+.wave-char.char-24 { animation-delay: 1.2s; }
+.wave-char.char-25 { animation-delay: 1.25s; }
+.wave-char.char-26 { animation-delay: 1.3s; }
+.wave-char.char-27 { animation-delay: 1.35s; }
+.wave-char.char-28 { animation-delay: 1.4s; }
+.wave-char.char-29 { animation-delay: 1.45s; }
+

@@ -30,35 +30,47 @@ function HomePage() {
   if (pesanError) return <div className="error">Error: {pesanError}</div>;
 
   return (
-    <div className="menu-container">
-      <header className="menu-header">
-        <div className="flex justify-between items-center">
-          <div>
-            <h1 className="menu-title">Rumah Makan Padang Family</h1>
-            <h2>📔Daftar Menu</h2>
-          </div>
-          <button 
-            onClick={toggleDarkMode}
-            className="p-2 rounded-full bg-gray-200 dark:bg-gray-700"
-          >
-            {darkMode ? '☀️' : '🌙'}
-          </button>
-        </div>
-      </header>
+    <>
+    <button
+      onClick={toggleDarkMode}
+      className="toggle-dark-mode-button"
+    >
+      {darkMode ? '☀️' : '🌙'}
+    </button>
 
-      <div className="menu-grid">
-        {daftarMenu.map((item) => (
-          <MenuMakanan
-            key={item.id}
-            nama={item.nama}
-            harga={item.harga}
-            gambar={item.gambar}
-            tersedia={item.tersedia}
-            kategori={item.kategori}
-          />
-        ))}
+
+      <div className="menu-container">
+        <header className="menu-header">
+          <div className="flex justify-between items-center">
+            <div>
+            <h1 className="menu-title wave-title">
+              {'Rumah Makan Padang Family'.split('').map((char, i) => (
+                <span key={i} className={`wave-char char-${i}`}>
+                  {char === ' ' ? '\u00A0' : char}
+                </span>
+              ))}
+            </h1>
+
+
+              <h2>📔Daftar Menu</h2>
+            </div>
+          </div>
+        </header>
+
+        <div className="menu-grid">
+          {daftarMenu.map((item) => (
+            <MenuMakanan
+              key={item.id}
+              nama={item.nama}
+              harga={item.harga}
+              gambar={item.gambar}
+              tersedia={item.tersedia}
+              kategori={item.kategori}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
