@@ -1,23 +1,49 @@
+import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useDataMenu } from './services/menuService';
 import MenuMakanan from './components/MenuMakanan';
+import AdminPanel from './pages/AdminPanel';
 import './App.css';
 
-function App() {
+function HomePage() {
+  const [darkMode, setDarkMode] = useState(() => {
+    const savedMode = localStorage.getItem('darkMode');
+    return savedMode ? JSON.parse(savedMode) : false;
+  });
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    localStorage.setItem('darkMode', JSON.stringify(darkMode));
+  }, [darkMode]);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   const { daftarMenu, sedangMemuat, pesanError } = useDataMenu();
 
-  if (sedangMemuat) {
-    return <div className="loading">Memuat menu...</div>;
-  }
-
-  if (pesanError) {
-    return <div className="error">Error: {pesanError}</div>;
-  }
+  if (sedangMemuat) return <div className="loading">Memuat menu...</div>;
+  if (pesanError) return <div className="error">Error: {pesanError}</div>;
 
   return (
     <div className="menu-container">
       <header className="menu-header">
-        <h1 className="menu-title">Rumah Makan Padang Family</h1>
-        <h2>📔Daftar Menu</h2> 
+        <div className="flex justify-between items-center">
+          <div>
+            <h1 className="menu-title">Rumah Makan Padang Family</h1>
+            <h2>📔Daftar Menu</h2>
+          </div>
+          <button 
+            onClick={toggleDarkMode}
+            className="p-2 rounded-full bg-gray-200 dark:bg-gray-700"
+          >
+            {darkMode ? '☀️' : '🌙'}
+          </button>
+        </div>
       </header>
 
       <div className="menu-grid">
@@ -33,6 +59,17 @@ function App() {
         ))}
       </div>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/admin" element={<AdminPanel />} />
+      </Routes>
+    </Router>
   );
 }
 

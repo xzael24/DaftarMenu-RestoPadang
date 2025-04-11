@@ -123,6 +123,61 @@ body {
   border-radius: 4px;
   font-size: 0.75rem;
   font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+/* Dark mode specific styles */
+.dark .menu-header {
+  color: #e5e7eb;
+}
+
+.dark {
+  --primary:rgb(255, 255, 255); /* atau warna kontras lain untuk dark mode */
+}
+
+
+/* Dark mode for body and cards */
+.dark body {
+  background-color: #111827; /* atau sesuaikan warna gelap yang kamu mau */
+  color: #f3f4f6;
+}
+
+.dark .menu-item-name {
+  color: #f3f4f6;
+}
+
+.dark .menu-item-price {
+  color:rgb(255, 255, 255); /* misalnya warna kuning biar kontras, bisa diganti */
+}
+
+
+.dark .menu-item {
+  background-color: #1f2937;
+}
+
+
+.dark .search-input {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #f3f4f6;
+}
+
+.dark .category-filters button {
+  background-color: #374151;
+  color: #f3f4f6;
+}
+
+.dark .menu-item-content {
+  color: #e5e7eb;
+}
+
+.dark .menu-item:hover {
+  box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+}
+
+/* Smooth transitions for all interactive elements */
+button, input, .menu-item, .category-tag {
+  transition: all 0.3s ease;
 }
 
 /* Responsive */
