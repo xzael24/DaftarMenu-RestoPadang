@@ -24,3 +24,16 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local development files
+*.local
+
+# Cache
+.cache/
+
+# Coverage
+coverage/
+
+# Temp files
+.temp/
+.tmp/
