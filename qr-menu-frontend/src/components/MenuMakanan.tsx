@@ -13,7 +13,7 @@ export default function MenuMakanan({ nama, harga, gambar, tersedia, kategori }:
         <img 
           src={gambar} 
           alt={nama} 
-          className="menu-item-image w-full h-48 object-cover sm:h-40"
+          className="menu-item-image w-full"
           onError={(e) => {
             (e.target as HTMLImageElement).src = '/placeholder-food.jpg';
           }}
