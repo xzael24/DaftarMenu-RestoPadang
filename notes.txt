@@ -1,5 +1,0 @@
-cd qr-menu-frontend
-npm run dev
-
-cd qr-menu-backend
-node server.js
