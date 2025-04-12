@@ -179,6 +179,42 @@ button, input, .menu-item, .category-tag {
 /* Responsive */
 @media (max-width: 768px) {
   .menu-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  .menu-title {
+    font-size: 1.8rem;
+  }
+
+  .menu-container {
+    padding: 1rem;
+  }
+
+  .menu-item {
+    margin: 0 auto;
+  }
+
+  .search-container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-title {
+    font-size: 1.5rem;
+  }
+
+  .menu-item-image {
+    height: 150px;
+  }
+
+  .menu-item-content {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-grid {
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   }
 }

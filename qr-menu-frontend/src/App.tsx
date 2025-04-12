@@ -40,20 +40,16 @@ function HomePage() {
 
 
       <div className="menu-container">
-        <header className="menu-header">
-          <div className="flex justify-between items-center">
-            <div>
-            <h1 className="menu-title wave-title">
+        <header className="menu-header text-center mb-8">
+          <div className="flex flex-col items-center">
+            <h1 className="menu-title wave-title text-3xl sm:text-2xl">
               {'Rumah Makan Padang Family'.split('').map((char, i) => (
                 <span key={i} className={`wave-char char-${i}`}>
                   {char === ' ' ? '\u00A0' : char}
                 </span>
               ))}
             </h1>
-
-
-              <h2>📔Daftar Menu</h2>
-            </div>
+            <h2 className="text-lg sm:text-base">📔Daftar Menu</h2>
           </div>
         </header>
 

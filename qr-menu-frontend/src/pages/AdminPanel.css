@@ -45,3 +45,33 @@
 .admin-table td, .admin-table th {
   min-width: 100px;
 }
+
+@media (max-width: 768px) {
+  .admin-container {
+    padding: 1rem;
+  }
+
+  .admin-title {
+    font-size: 1.2rem;
+  }
+
+  .admin-table-container {
+    overflow-x: auto;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    font-size: 0.9rem;
+    padding: 0.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-title {
+    font-size: 1rem;
+  }
+
+  .admin-table img {
+    width: 40px;
+  }
+}
