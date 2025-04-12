@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { db } from '../config/firebase';
 import { collection, getDocs, updateDoc, doc } from 'firebase/firestore';
-import './adminpanel.css';
+import './AdminPanel.css';
 
 interface MenuItem {
   id: string;
