@@ -69,6 +69,11 @@ body {
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 370px; /* Tinggi konsisten untuk semua kartu */
+  min-height: 370px; /* Pastikan minimum tinggi */
 }
 
 .menu-item:hover {
@@ -76,14 +81,18 @@ body {
   box-shadow: 0 10px 15px rgba(0,0,0,0.1);
 }
 
+/* Gambar menyesuaikan ukuran kartu */
 .menu-item-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+  height: 200px; /* Tinggi tetap untuk gambar */
+  object-fit: cover; /* Gambar tetap proporsional */
 }
 
 .menu-item-content {
   padding: 1.25rem;
+  flex-grow: 1; /* Isi kartu akan menyesuaikan */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .menu-item-name {
