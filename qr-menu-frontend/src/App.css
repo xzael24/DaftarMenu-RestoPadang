@@ -58,7 +58,7 @@ body {
 /* Menu Grid */
 .menu-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(4, 1fr); /* Tetap 4 kolom */
   gap: 1.5rem;
 }
 
@@ -72,7 +72,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 370px; /* Tinggi konsisten untuk semua kartu */
+  height: 370px; /* Tinggi tetap */
   min-height: 370px; /* Pastikan minimum tinggi */
 }
 
