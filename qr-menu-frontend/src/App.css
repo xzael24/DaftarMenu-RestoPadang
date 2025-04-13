@@ -58,7 +58,7 @@ body {
 /* Menu Grid */
 .menu-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Tetap 4 kolom */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
@@ -72,7 +72,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 370px; /* Tinggi tetap */
+  height: 370px; /* Tinggi konsisten untuk semua kartu */
   min-height: 370px; /* Pastikan minimum tinggi */
 }
 
@@ -188,7 +188,8 @@ button, input, .menu-item, .category-tag {
 /* Responsive */
 @media (max-width: 768px) {
   .menu-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk tablet */
+    gap: 1rem;
   }
 
   .menu-title {
@@ -200,7 +201,7 @@ button, input, .menu-item, .category-tag {
   }
 
   .menu-item {
-    margin: 0 auto;
+    height: 300px; /* Tinggi lebih kecil untuk mobile */
   }
 
   .search-container {
@@ -209,12 +210,16 @@ button, input, .menu-item, .category-tag {
 }
 
 @media (max-width: 480px) {
+  .menu-grid {
+    grid-template-columns: repeat(1, 1fr); /* 1 kolom untuk layar kecil */
+  }
+
   .menu-title {
     font-size: 1.5rem;
   }
 
   .menu-item-image {
-    height: 150px;
+    height: 150px; /* Gambar lebih kecil */
   }
 
   .menu-item-content {
