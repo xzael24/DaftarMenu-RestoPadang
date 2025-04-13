@@ -29,7 +29,11 @@ export default function MenuMakanan({ nama, harga, gambar, tersedia, kategori }:
           <h3 className="menu-item-name text-lg font-semibold">{nama}</h3>
           <p className="menu-item-price text-primary font-bold">Rp {harga.toLocaleString("id-ID")}</p>
         </div>
-        <div className={`menu-item-availability mt-2 text-sm font-medium ${tersedia ? 'text-green-500' : 'text-red-500'}`}>
+        <div
+          className={`menu-item-availability mt-2 text-sm font-medium ${
+            tersedia ? 'available' : 'unavailable'
+          }`}
+        >
           {tersedia ? '✔ Tersedia' : '✖ Habis'}
         </div>
       </div>

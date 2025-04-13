@@ -180,6 +180,14 @@ body {
   box-shadow: 0 10px 15px rgba(0,0,0,0.3);
 }
 
+.dark .menu-item-availability.available {
+  color: #10B981 !important; /* Hijau untuk tersedia */
+}
+
+.dark .menu-item-availability.unavailable {
+  color: #EF4444 !important; /* Merah untuk habis */
+}
+
 /* Smooth transitions for all interactive elements */
 button, input, .menu-item, .category-tag {
   transition: all 0.3s ease;
@@ -312,4 +320,13 @@ button, input, .menu-item, .category-tag {
 .wave-char.char-27 { animation-delay: 1.35s; }
 .wave-char.char-28 { animation-delay: 1.4s; }
 .wave-char.char-29 { animation-delay: 1.45s; }
+
+/* Warna untuk status tersedia dan habis */
+.menu-item-availability.available {
+  color: #10B981 !important; /* Hijau untuk tersedia */
+}
+
+.menu-item-availability.unavailable {
+  color: #EF4444 !important; /* Merah untuk habis */
+}
 
